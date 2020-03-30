@@ -4,12 +4,14 @@
 #include<list>
 using namespace std;
 
-void SetColor(int text, int bg) 
+void SetColor(int text, int bg)
+
 {
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hStdOut, (WORD)((bg << 4) | text));
 }
-enum ConsoleColor {
+enum ConsoleColor
+{
 	Black = 0,
 	Blue = 1,
 	Green = 2,

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include<windows.h>
 #include <conio.h>
+#include<list>
 using namespace std;
 
 struct date
@@ -26,7 +27,7 @@ struct event
 	time timeEvent;
 	int urgentRate;
 };
-list<event> eventArr;
+list <event> eventArr;
 void addNewEvent()
 {
 
