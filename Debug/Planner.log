@@ -1,11 +1,5 @@
 ﻿  Header.cpp
-C:\Users\admin\source\repos\Planner\Header.cpp(9,1): error C2084: function 'void SetColor(int,int)' already has a body
-C:\Users\admin\source\repos\Planner\Header.h(39): message : see previous definition of 'SetColor'
 C:\Users\admin\source\repos\Planner\Header.cpp(14,1): error C2011: 'ConsoleColor': 'enum' type redefinition
-C:\Users\admin\source\repos\Planner\Header.h(43): message : see declaration of 'ConsoleColor'
-C:\Users\admin\source\repos\Planner\Header.cpp(33,1): error C2084: function 'void addNewEvent(void)' already has a body
-C:\Users\admin\source\repos\Planner\Header.h(31): message : see previous definition of 'addNewEvent'
-C:\Users\admin\source\repos\Planner\Header.cpp(62,1): error C2084: function 'void showEvents(void)' already has a body
-C:\Users\admin\source\repos\Planner\Header.h(35): message : see previous definition of 'showEvents'
+C:\Users\admin\source\repos\Planner\Header.h(37): message : see declaration of 'ConsoleColor'
   Planner.cpp
   Generating Code...

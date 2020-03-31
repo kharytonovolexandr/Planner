@@ -28,19 +28,12 @@ struct event
 	int urgentRate;
 };
 list <event> eventArr;
-void addNewEvent()
-{
+void addNewEvent();
 
-}
-void showEvents()
-{
+void showEvents();
 
-}
-void SetColor(int text, int bg) 
-{
-	
-}
+void SetColor(int text, int bg);
+
 enum ConsoleColor
 {
-
 };
