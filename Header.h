@@ -23,12 +23,14 @@ struct event
 {
 	string title;
 	string description;
+	string category;
 	date eventDate;
 	time timeEvent;
 	int urgentRate;
 };
 
 void addNewEvent();
+void showCategory();
 
 void showEvents();
 

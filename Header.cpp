@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include"Header.h"
 #include<string>
 #include<list>
@@ -21,6 +21,8 @@ void addNewEvent()
 	cin >> newEvent.title;
 	cout << "Enter description: " << endl;
 	cin >> newEvent.description;
+	cout << "Enter category: " << endl;
+	cin >> newEvent.category;
 	cout << "Enter date of event: " << endl;
 	{
 		cout << "day:"<<endl;
@@ -41,7 +43,54 @@ void addNewEvent()
 	cin >> newEvent.urgentRate;
 	eventArr.push_back(newEvent);
 }
+void showCategory()
+{
+	string chooseCategory;
+	cout << "Choose event category you want to see:" << endl;
+	cin >> chooseCategory;
+	for (event item : eventArr)
+	{
+		if (item.category == chooseCategory)
+		{
+			if (item.urgentRate == 1)
+			{
+				SetColor(2, 0);
+				goto show;
 
+			}
+			else if (item.urgentRate == 2)
+			{
+				SetColor(12, 0);
+				goto show;
+			}
+			else if (item.urgentRate == 3)
+			{
+				SetColor(4, 0);
+				goto show;
+			}
+		show:
+			cout << "Event title: " << item.title << endl;
+			cout << "Description: " << item.description << endl;
+			cout << "Category: " << item.category << endl;
+			{
+				cout << "Event date: " << endl;
+				cout << item.eventDate.day << " ";
+				cout << item.eventDate.month << " ";
+				cout << item.eventDate.year;
+				cout << endl;
+
+			}
+			cout << "Event time: " << endl;
+			{
+				cout << item.timeEvent.hour << " : ";
+				cout << item.timeEvent.min << endl;
+			}
+			cout << "Urgent rate: " << item.urgentRate << "\t" << endl;
+			SetColor(15, 0);
+		}//Костиль, але я не знаю як інакше зробити!
+
+	}
+}
 
 void showEvents()
 {
@@ -66,6 +115,7 @@ void showEvents()
 		show:
 		cout << "Event title: " << item.title << endl;
 		cout << "Description: " << item.description << endl;
+		cout << "Category: " << item.category << endl;
 		{
 			cout << "Event date: " << endl;
 			cout << item.eventDate.day << " ";

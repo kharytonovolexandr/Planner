@@ -2,6 +2,7 @@
 #include"Header.h"
 #include<string>
 #include<list>
+//#include "Header.cpp"
 using namespace std;
 
 
@@ -14,7 +15,8 @@ int main()
 	{
 		cout << "1. Add new event: " << endl;
 		cout << "2. Show events: " << endl;
-		cout << "3. Exit: " << endl;
+		cout << "3. Show by categories: " << endl;
+		cout << "4. Exit: " << endl;
 		cin >> action;
 		switch (action)
 		{
@@ -31,12 +33,17 @@ int main()
 		case 3:
 		{
 			system("cls");
+			showCategory();
+		}break;
+		case 4:
+		{
+			system("cls");
 			cout << "Good bye! " << endl;
 		}break;
 
 
 		}
-	} while (action != 3);
+	} while (action != 4);
 
 	system("pause");
 	return 0;
