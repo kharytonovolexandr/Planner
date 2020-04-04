@@ -1,5 +1,2 @@
 ﻿  Header.cpp
-C:\Users\admin\source\repos\Planner\Header.cpp(14,1): error C2011: 'ConsoleColor': 'enum' type redefinition
-C:\Users\admin\source\repos\Planner\Header.h(37): message : see declaration of 'ConsoleColor'
-  Planner.cpp
-  Generating Code...
+  Planner.vcxproj -> C:\Users\admin\source\repos\Planner\Debug\Planner.exe

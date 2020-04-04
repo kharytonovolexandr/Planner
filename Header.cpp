@@ -4,31 +4,14 @@
 #include<list>
 using namespace std;
 
+list <event> eventArr;
 void SetColor(int text, int bg)
 
 {
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hStdOut, (WORD)((bg << 4) | text));
 }
-enum ConsoleColor
-{
-	Black = 0,
-	Blue = 1,
-	Green = 2,
-	Cyan = 3,
-	Red = 4,
-	Magenta = 5,
-	Brown = 6,
-	LightGray = 7,
-	DarkGray = 8,
-	LightBlue = 9,
-	LightGreen = 10,
-	LightCyan = 11,
-	LightRed = 12,
-	LightMagenta = 13,
-	Yellow = 14,
-	White = 15
-};
+
 void addNewEvent()
 {
 	event newEvent;
@@ -40,11 +23,11 @@ void addNewEvent()
 	cin >> newEvent.description;
 	cout << "Enter date of event: " << endl;
 	{
-		cout << "day:";
+		cout << "day:"<<endl;
 		cin >> newEvent.eventDate.day;
-		cout << "month:";
+		cout << "month:"<<endl;
 		cin >> newEvent.eventDate.month;
-		cout << "year:";
+		cout << "year:"<<endl;
 		cin >> newEvent.eventDate.year;
 	}
 	cout << "Enter event time: " << endl;
@@ -58,25 +41,45 @@ void addNewEvent()
 	cin >> newEvent.urgentRate;
 	eventArr.push_back(newEvent);
 }
+
+
 void showEvents()
 {
-	
 	for (event item : eventArr)
 	{
-			cout << "Event title: " << item.title << endl;
-			cout << "Description: " << item.description << endl;
-			{
-				cout << "Event date: " << endl;
-				cout << item.eventDate.day << " ";
-				cout << item.eventDate.month << " ";
-				cout << item.eventDate.year;
+		if (item.urgentRate == 1)
+		{
+			SetColor(2, 0);
+			goto show;
+			
+		}
+		else if (item.urgentRate == 2)
+		{
+			SetColor(12, 0);
+			goto show;
+		}
+		else if (item.urgentRate == 3)
+		{
+			SetColor(4, 0);
+			goto show;
+		}
+		show:
+		cout << "Event title: " << item.title << endl;
+		cout << "Description: " << item.description << endl;
+		{
+			cout << "Event date: " << endl;
+			cout << item.eventDate.day << " ";
+			cout << item.eventDate.month << " ";
+			cout << item.eventDate.year;
+			cout << endl;
 
-			}
-			cout << "Event time: " << endl;
-			{
-				cout << item.timeEvent.hour << " : ";
-				cout << item.timeEvent.min;
-			}
-			cout << "Urgent rate: " << item.urgentRate << endl;
+		}
+		cout << "Event time: " << endl;
+		{
+			cout << item.timeEvent.hour << " : ";
+			cout << item.timeEvent.min << endl;
+		}
+		cout << "Urgent rate: " << item.urgentRate << "\t" << endl;
+		SetColor(15, 0);
 	}
 }
