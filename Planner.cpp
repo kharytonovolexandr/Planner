@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+
 	int action = 0;
 
 	do
@@ -16,14 +17,15 @@ int main()
 		cout << "1. Add new event: " << endl;
 		cout << "2. Show events: " << endl;
 		cout << "3. Show by categories: " << endl;
-		cout << "4. Exit: " << endl;
+		cout << "4. Sort events: " << endl;
+		cout << "5. Exit: " << endl;
 		cin >> action;
 		switch (action)
 		{
 		case 1:
 		{
 			system("cls");
-			addNewEvent();
+			AddNewEvent();
 		}break;
 		case 2:
 		{
@@ -34,8 +36,14 @@ int main()
 		{
 			system("cls");
 			showCategory();
+
 		}break;
 		case 4:
+		{
+			system("cls");
+			sort();
+		}break;
+		case 5:
 		{
 			system("cls");
 			cout << "Good bye! " << endl;
@@ -43,7 +51,7 @@ int main()
 
 
 		}
-	} while (action != 4);
+	} while (action != 5);
 
 	system("pause");
 	return 0;

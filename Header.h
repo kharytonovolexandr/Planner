@@ -6,12 +6,13 @@
 #include<windows.h>
 #include <conio.h>
 #include<list>
+#include <bits.h>
 using namespace std;
 
 struct date
 {
 	int day;
-	string month;
+	int month;
 	int year;
 };
 struct time
@@ -29,11 +30,10 @@ struct event
 	int urgentRate;
 };
 
-void addNewEvent();
+void sort();
 void showCategory();
-
 void showEvents();
-
+void AddNewEvent();
 void SetColor(int text, int bg);
 
 enum ConsoleColor
@@ -54,4 +54,20 @@ enum ConsoleColor
 	LightMagenta = 13,
 	Yellow = 14,
 	White = 15
+};
+
+enum MonthNumbers
+{
+	january = 1,
+	february = 2,
+	march=3,
+	april=4,
+	may=5,
+	june=6,
+	july=7,
+	august=8,
+	septmber=9,
+	october=10,
+	november=11,
+	december=12
 };
